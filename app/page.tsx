@@ -4,7 +4,7 @@ import { searchParams } from "@/types/params";
 import { Suspense } from "react";
 import Loading from "./loading";
 
-export default async function Home({searchParams}: searchParams) {
+export default async function Home({searchParams}: any) {
   // const res = await fetch(process.env.RAM_URL + `asdcharacter/${searchParams.id2}`)
   // const data = await res.json()
   // const allCharacters = await FetchAllCharacters(,searchParams?.id2);
