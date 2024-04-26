@@ -1,21 +1,26 @@
 import CharacterPick from "@/components/containers/PickGrid/CharacterPick";
-import { FetchAllCharacters } from "@/services/apicall";
-import { searchParams } from "@/types/params";
 import { Suspense } from "react";
 import Loading from "./loading";
+import List from "@/components/ui/List";
+import EpisodesLists from "@/components/containers/EpisodesList/EpisodeLists";
 
 export default async function Home({searchParams}: any) {
-  // const res = await fetch(process.env.RAM_URL + `asdcharacter/${searchParams.id2}`)
-  // const data = await res.json()
-  // const allCharacters = await FetchAllCharacters(,searchParams?.id2);
-
 
   return (
-    <main className="flex flex-col items-center justify-between pt-16">
+    <main className="flex flex-col items-center justify-between pt-16 px-64">
+      <h1 className=" font-extrabold text-4xl pb-6">Rick and Morty Episode Match</h1>
+      <p className="pb-8">Please choose between this options</p>
       <Suspense fallback={<Loading/>}>
         <CharacterPick searchParams={searchParams}/>
       </Suspense>
-      {/* <h1>{allCharacters.name}</h1> */}
+      <Suspense fallback={<Loading/>}>
+        <EpisodesLists searchParams={searchParams}/>
+      </Suspense>
     </main>
   );
 }
+
+
+
+//signal abort
+//try to fetch and find id on list 

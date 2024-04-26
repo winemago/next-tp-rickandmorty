@@ -18,7 +18,12 @@ const config = {
       },
     },
     extend: {
+      width:{
+        mainPageSize: "52rem"
+      },
       colors: {
+        character1: '#01B4C6',
+        character2: '#97ce4c',
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -22,10 +22,8 @@ const CharacterGrid = ({characters, source}: Props) => {
       {characters && characters.map((character: Character) => (
           <Card 
             key={character.id}
-            className="w-full cursor-pointer" 
-            onClick={() => {
-              console.log(character);
-              
+            className={`w-full rounded-lg border cursor-pointer ${character.id === Number(id1) ? ' bg-character1 ': character.id === Number(id2) ? ' bg-character2' : ''}`}
+            onClick={() => {              
               if (!id1 || source === '#1') {
                 router.push(`/?page=${page}&id1=${character.id}&id2=${id2}`)
               } else {
@@ -38,7 +36,10 @@ const CharacterGrid = ({characters, source}: Props) => {
               </Avatar>
               <div className=" flex-col">
                 <h3 className="font-bold ">{character.name}</h3>
-                <p>{character.status} - {character.species}</p>
+                <div className="flex">
+                  <p className={`${character.status === 'Alive' ? 'text-green-500 ' : character.status === 'Dead' ?  ' text-red-400' : '' }`}>{character.status}</p>
+                  <p> - {character.species}</p>
+                </div>
               </div>
             </CardContent>
           </Card>

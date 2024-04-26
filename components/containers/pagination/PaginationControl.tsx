@@ -25,14 +25,13 @@ const PaginationControls: FC<PaginationControlsProps> = (
   const searchParams = useSearchParams()
 
   const page = searchParams.get('page') ?? '1'
-  const id1 = searchParams.get('id1')
-  const id2 = searchParams.get('id2')
 
   return (
     <Pagination>
     <PaginationContent>
       <PaginationItem>
         <PaginationPrevious 
+        className=' cursor-pointer'
         onClick={() => {
           hasPrevPage &&
           router.push(`/?page=${Number(page) - 1}`)
@@ -43,9 +42,10 @@ const PaginationControls: FC<PaginationControlsProps> = (
       </PaginationItem>
       <PaginationItem>
         <PaginationNext 
+        className=' cursor-pointer'
         onClick={() => {
           hasNextPage &&
-          router.push(`/?page=${Number(page) + 1}&id1=${id1}&id2=${id2}`)
+          router.push(`/?page=${Number(page) + 1}`)
         }} />
       </PaginationItem>
     </PaginationContent>

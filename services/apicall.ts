@@ -12,9 +12,9 @@ export const FetchAllCharacters = async (page:string) => {
     }
 }
 
-export const FetchMultiCharacter = async (id1:string, id2:string) => {
+export const FetchMultiEpisode = async (episodes: number[]) => {
     try {
-        const res = await fetch(process.env.RAM_URL + `character/${id1}${id2}`)
+        const res = await fetch(process.env.RAM_URL + `episode/${episodes}`)
         const data = await res.json()
         if (data.error) {
             return new Error('Failed to fetch data')

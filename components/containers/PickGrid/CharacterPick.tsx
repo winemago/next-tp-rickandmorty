@@ -9,7 +9,7 @@ interface prop {
 
 const CharacterPick = async ({ searchParams }: prop) => {
 
-  const allCharacters = await FetchAllCharacters(searchParams.page,);
+  const allCharacters = await FetchAllCharacters(searchParams.page);
 
   const Characters1: Character[] = allCharacters?.results?.slice(0, allCharacters.results.length / 2);
   const Characters2: Character[] = allCharacters?.results?.slice(allCharacters.results.length / 2, allCharacters.results.length);
@@ -20,13 +20,13 @@ const CharacterPick = async ({ searchParams }: prop) => {
         allCharacters instanceof Error ? <h1>{allCharacters.message}</h1>
           :
           <>
-            <div className="flex flex-row gap-10 w-max">
+            <div className="flex flex-row gap-10 ">
               <div className="flex flex-col">
-                <h1 className="text-center p-4">Character #1</h1>
+                <h1 className="text-center text-2xl p-4 text-character1">Character #1</h1>
                 <CharacterGrid characters={Characters1} source={'#1'} />
               </div>
               <div className="flex flex-col">
-                <h1 className="text-center p-4">Character #2</h1>
+                <h1 className="text-center text-2xl p-4 text-character2">Character #2</h1>
                 <CharacterGrid characters={Characters2} source={'#2'} />
               </div>
             </div>
