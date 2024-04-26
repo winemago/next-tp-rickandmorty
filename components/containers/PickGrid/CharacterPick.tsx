@@ -22,11 +22,11 @@ const CharacterPick = async ({ searchParams }: prop) => {
           <>
             <div className="flex flex-row gap-10 ">
               <div className="flex flex-col">
-                <h1 className="text-center text-2xl p-4 text-character1">Character #1</h1>
+                <h1 className="text-center text-2xl p-4 underline decoration-solid text-character1">Character #1</h1>
                 <CharacterGrid characters={Characters1} source={'#1'} />
               </div>
               <div className="flex flex-col">
-                <h1 className="text-center text-2xl p-4 text-character2">Character #2</h1>
+                <h1 className="text-center text-2xl p-4 underline decoration-solid text-character2">Character #2</h1>
                 <CharacterGrid characters={Characters2} source={'#2'} />
               </div>
             </div>
