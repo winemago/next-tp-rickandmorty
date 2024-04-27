@@ -3,10 +3,11 @@
 import { AvatarImage, Avatar } from "@/components/ui/avatar"
 import { CardContent, Card } from "@/components/ui/card"
 import { Character } from "@/types/characters";
+import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
-interface Props {
+type Props = {
   characters: Character[],
   source: string
 }
@@ -37,7 +38,7 @@ const CharacterGrid = ({characters, source}: Props) => {
             }}>
             <CardContent className="flex">
               <Avatar>
-                <AvatarImage alt="Character Image" src={character.image} />
+                <Image alt="Character Image" src={character.image} width={50} height={50}/>
               </Avatar>
               <div className=" flex-col">
                 <h3 className="font-bold ">{character.name}</h3>

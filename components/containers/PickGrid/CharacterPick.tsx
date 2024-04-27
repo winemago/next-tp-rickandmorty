@@ -3,11 +3,11 @@ import CharacterGrid from "./CharacterGrid";
 import { Character } from "@/types/characters";
 import PaginationControls from "../pagination/PaginationControl";
 
-interface prop {
+type Prop = {
   searchParams: { page: string }
 }
 
-const CharacterPick = async ({ searchParams }: prop) => {
+const CharacterPick = async ({ searchParams }: Prop) => {
 
   const allCharacters = await FetchAllCharacters(searchParams.page);
 
@@ -31,7 +31,7 @@ const CharacterPick = async ({ searchParams }: prop) => {
               </div>
             </div>
             <div className="py-6 ">
-              <PaginationControls hasPrevPage={allCharacters?.info?.prev} hasNextPage={allCharacters?.info?.next} />
+              <PaginationControls hasPrevPage={allCharacters?.info?.prev} hasNextPage={allCharacters?.info?.next} totalPages={allCharacters?.info?.pages}/>
             </div>
           </>
       }

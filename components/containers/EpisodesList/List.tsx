@@ -33,7 +33,7 @@ export default function List({ title, description, episodes }: Prop) {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="overflow-auto h-96">
+          <div className="overflow-auto h-96 scroll-m-1">
           <Table>
             <TableHeader>
               <TableRow className=" w-full">

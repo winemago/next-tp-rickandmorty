@@ -2,7 +2,7 @@ import List from "@/components/containers/EpisodesList/List"
 import { extractLastIdFromUrls, findEpisodesByIds, findRepeatedEpisodes } from "@/lib/utils"
 import { FetchAllCharacters, FetchMultiEpisode } from "@/services/apicall"
 
-type prop = {
+type Prop = {
   searchParams: {
     id1: number | 'null',
     id2: number | 'null',
@@ -10,7 +10,7 @@ type prop = {
   }
 }
 
-const EpisodesLists = async ({ searchParams }: prop) => {
+const EpisodesLists = async ({ searchParams }: Prop) => {
   const id1 = searchParams?.id1
   const id2 = searchParams?.id2
 
@@ -34,7 +34,7 @@ const EpisodesLists = async ({ searchParams }: prop) => {
   }
 
   return (
-    <div className="flex gap-4 pt-8 ">
+    <div className="flex gap-4 pt-8 pb-10">
       <List title="Episodes Character #1" description="All episodes that character #1 had appear" episodes={episodesC1}/>
       <List title="Episodes that match" description="Common episodes between #1 and #2" episodes={commonEpisodes}/>
       <List title="Episodes Character #2" description="All episodes that character #2 had appear" episodes={episodesC2}/>

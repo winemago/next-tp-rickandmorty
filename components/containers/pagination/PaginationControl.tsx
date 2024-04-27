@@ -1,7 +1,7 @@
 'use client'
 
 import { FC } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import {
   Pagination,
   PaginationContent,
@@ -10,46 +10,47 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination"
 
-interface PaginationControlsProps {
-  hasNextPage: boolean
-  hasPrevPage: boolean
+type PaginationControlsProps = {
+  hasNextPage: boolean,
+  hasPrevPage: boolean,
+  totalPages: number
 }
 
 const PaginationControls: FC<PaginationControlsProps> = (
   {
     hasNextPage,
     hasPrevPage,
+    totalPages
   }
 ) => {
-  const router = useRouter()
   const searchParams = useSearchParams()
 
   const page = searchParams.get('page') ?? '1'
 
   return (
     <Pagination>
-    <PaginationContent>
-      <PaginationItem>
-        <PaginationPrevious 
-        className=' cursor-pointer'
-        onClick={() => {
-          hasPrevPage &&
-          router.push(`/?page=${Number(page) - 1}`)
-        }} />
-      </PaginationItem>
-      <PaginationItem>
-        {page}
-      </PaginationItem>
-      <PaginationItem>
-        <PaginationNext 
-        className=' cursor-pointer'
-        onClick={() => {
-          hasNextPage &&
-          router.push(`/?page=${Number(page) + 1}`)
-        }} />
-      </PaginationItem>
-    </PaginationContent>
-  </Pagination>
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious
+            className=' cursor-pointer'
+            href={`${hasPrevPage ? `/?page=${Number(page) - 1}` : '' }`}
+            scroll={false}
+            isActive={hasPrevPage}
+          />
+        </PaginationItem>
+        <PaginationItem>
+          {page}/{totalPages}
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationNext
+            className=' cursor-pointer'
+            href={`${hasNextPage ? `/?page=${Number(page) + 1}` : '' }`}
+            scroll={false}
+            isActive={hasNextPage}
+          />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
   )
 }
 
