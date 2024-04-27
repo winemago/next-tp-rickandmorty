@@ -38,7 +38,7 @@ const PaginationControls: FC<PaginationControlsProps> = (
             isActive={hasPrevPage}
           />
         </PaginationItem>
-        <PaginationItem>
+        <PaginationItem className='px-4'>
           {page}/{totalPages}
         </PaginationItem>
         <PaginationItem>
