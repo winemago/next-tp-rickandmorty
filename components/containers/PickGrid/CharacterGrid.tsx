@@ -25,7 +25,7 @@ const CharacterGrid = ({characters, source}: Props) => {
       {characters && characters.map((character: Character) => (
           <Card 
             key={character.id}
-            className={`w-full rounded-lg border cursor-pointer shadow-lg shadow-zinc-400/80 ${character.id === C1 || character.id === Number(id1) ? ' bg-character1 border-2 border-character2': character.id === C2 || character.id === Number(id2) ? ' bg-character2 border-2 border-character1' : ''}`}
+            className={`w-full rounded-lg border cursor-pointer shadow-lg shadow-zinc-400/80 ${character.id === C1 ? ' bg-character1 border-2 border-character1': character.id === C2 ? ' bg-character2 border-2 border-character2' : ''}`}
             onClick={() => {              
               if ( source === '#1') {
                 setC1(character.id)

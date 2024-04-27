@@ -20,7 +20,7 @@ const CharacterPick = async ({ searchParams }: prop) => {
         allCharacters instanceof Error ? <h1>{allCharacters.message}</h1>
           :
           <>
-            <div className="flex flex-row gap-10 ">
+            <div className="flex flex-row gap-10">
               <div className="flex flex-col">
                 <h1 className="text-center text-2xl p-4 underline decoration-solid text-character1">Character #1</h1>
                 <CharacterGrid characters={Characters1} source={'#1'} />
