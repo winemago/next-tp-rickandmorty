@@ -14,6 +14,7 @@ const CharacterPick = async ({ searchParams }: Prop) => {
   const Characters1: Character[] = allCharacters?.results?.slice(0, allCharacters.results.length / 2);
   const Characters2: Character[] = allCharacters?.results?.slice(allCharacters.results.length / 2, allCharacters.results.length);
 
+  
   return (
     <>
       {

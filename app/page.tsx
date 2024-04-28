@@ -2,9 +2,9 @@ import CharacterPick from "@/components/containers/PickGrid/CharacterPick";
 import { Suspense } from "react";
 import Loading from "./loading";
 import EpisodesLists from "@/components/containers/EpisodesList/EpisodeLists";
-import { DarkToggle } from "@/components/containers/darkmode/DarkToggle";
+import { DarkToggle } from "@/components/containers/darktoggle/DarkToggle";
 
-export default async function Home({ searchParams }: any) {
+export default function Home({ searchParams }: any) {
 
   return (
     <main className="flex flex-col items-center justify-between pt-16 xl:px-58 ">
