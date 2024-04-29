@@ -1,4 +1,4 @@
-import List from "@/components/containers/episodesList/List"
+import List from "@/components/containers/EpisodesList/List"
 import { extractLastIdFromUrls, findEpisodesByIds, findRepeatedEpisodes } from "@/lib/utils"
 import { FetchAllCharacters, FetchMultiEpisode } from "@/services/apiCall"
 

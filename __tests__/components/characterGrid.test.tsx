@@ -1,4 +1,4 @@
-import CharacterGrid from '@/components/containers/pickGrid/CharacterGrid';
+import CharacterGrid from '@/components/containers/PickGrid/CharacterGrid';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 

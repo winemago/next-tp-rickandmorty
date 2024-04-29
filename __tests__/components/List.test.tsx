@@ -1,4 +1,4 @@
-import List from '@/components/containers/episodesList/List';
+import List from '@/components/containers/EpisodesList/List';
 import { render } from '@testing-library/react';
 
 const title = 'some title';

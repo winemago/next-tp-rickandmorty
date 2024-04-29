@@ -1,7 +1,7 @@
-import CharacterPick from "@/components/containers/pickGrid/CharacterPick";
+import CharacterPick from "@/components/containers/PickGrid/CharacterPick";
 import { Suspense } from "react";
 import Loading from "./loading";
-import EpisodesLists from "@/components/containers/episodesList/EpisodeLists";
+import EpisodesLists from "@/components/containers/EpisodesList/EpisodeLists";
 import { DarkToggle } from "@/components/containers/darktoggle/DarkToggle";
 
 export default function Home({ searchParams }: any) {
