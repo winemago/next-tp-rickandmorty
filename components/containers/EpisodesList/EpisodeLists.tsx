@@ -1,6 +1,7 @@
-import List from "@/components/containers/EpisodesList/List"
+import List from "@/components/containers/episodesList/List"
 import { extractLastIdFromUrls, findEpisodesByIds, findRepeatedEpisodes } from "@/lib/utils"
-import { FetchAllCharacters, FetchMultiEpisode } from "@/services/apicall"
+import { FetchAllCharacters, FetchMultiEpisode } from "@/services/apiCall"
+
 
 type Prop = {
   searchParams: {

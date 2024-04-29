@@ -1,7 +1,7 @@
-import { FetchAllCharacters } from "@/services/apicall";
-import CharacterGrid from "./CharacterGrid";
 import { Character } from "@/types/characters";
 import PaginationControls from "../pagination/PaginationControl";
+import { FetchAllCharacters } from "@/services/apiCall";
+import CharacterGrid from "./CharacterGrid";
 
 type Prop = {
   searchParams: { page: string }
