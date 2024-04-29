@@ -21,7 +21,7 @@ type Prop = {
 }
 
 export default function List({ title, description, episodes }: Prop) {
-  const arrayEpisodes = Array.isArray(episodes) ? episodes : [episodes];
+  const arrayEpisodes = Array.isArray(episodes) ? episodes : [episodes]
 
   return (
     <div className="overflow-auto">
