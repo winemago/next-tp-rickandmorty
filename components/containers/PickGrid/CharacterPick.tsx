@@ -1,6 +1,6 @@
 import { Character } from "@/types/characters";
 import PaginationControls from "../pagination/PaginationControl";
-import { FetchAllCharacters } from "@/services/apiCall";
+import { FetchAllCharacters } from "@/services/apicall";
 import CharacterGrid from "./CharacterGrid";
 
 type Prop = {
